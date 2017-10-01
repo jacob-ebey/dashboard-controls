@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/TimePicker - index.js Raises onChange for valid input 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimePicker
+    onChange={[Function]}
+    value={1993-11-30T09:30:00.000Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          className="input  "
+          onChange={[Function]}
+          onClick={[Function]}
+          value="1:45 PM"
+        />,
+        undefined,
+        false,
+      ],
+      "className": "main",
+    },
+    "ref": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input  ",
+          "onChange": [Function],
+          "onClick": [Function],
+          "value": "1:45 PM",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      undefined,
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            className="input  "
+            onChange={[Function]}
+            onClick={[Function]}
+            value="1:45 PM"
+          />,
+          undefined,
+          false,
+        ],
+        "className": "main",
+      },
+      "ref": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input  ",
+            "onChange": [Function],
+            "onClick": [Function],
+            "value": "1:45 PM",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        undefined,
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`components/TimePicker - index.js Raises onChange if no value 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimePicker
+    onChange={[Function]}
+    value=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          className="input  "
+          onChange={[Function]}
+          onClick={[Function]}
+          value=""
+        />,
+        undefined,
+        false,
+      ],
+      "className": "main",
+    },
+    "ref": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input  ",
+          "onChange": [Function],
+          "onClick": [Function],
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      undefined,
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            className="input  "
+            onChange={[Function]}
+            onClick={[Function]}
+            value=""
+          />,
+          undefined,
+          false,
+        ],
+        "className": "main",
+      },
+      "ref": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input  ",
+            "onChange": [Function],
+            "onClick": [Function],
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        undefined,
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`components/TimePicker - index.js Renders without error 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimePicker
+    onChange={[Function]}
+    value={1993-11-30T09:30:00.000Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <input
+          className="input  "
+          onChange={[Function]}
+          onClick={[Function]}
+          value="1:30 AM"
+        />,
+        undefined,
+        false,
+      ],
+      "className": "main",
+    },
+    "ref": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input  ",
+          "onChange": [Function],
+          "onClick": [Function],
+          "value": "1:30 AM",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      undefined,
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <input
+            className="input  "
+            onChange={[Function]}
+            onClick={[Function]}
+            value="1:30 AM"
+          />,
+          undefined,
+          false,
+        ],
+        "className": "main",
+      },
+      "ref": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input  ",
+            "onChange": [Function],
+            "onClick": [Function],
+            "value": "1:30 AM",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        undefined,
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

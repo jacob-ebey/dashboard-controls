@@ -1,0 +1,70 @@
+.highlightBoarder {
+  box-shadow: 0 0 3px #0078d7;
+  border: 1px solid #0078d7;
+}
+
+.errorHighlight {
+  box-shadow: 0 0 3px #e81123;
+  border: 1px solid #e81123;
+  &:focus {
+    @extend .errorHighlight;
+  }
+}
+
+.main {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.error {
+  color: #e81123;
+  position: absolute;
+  display: flex;
+  text-align: start;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid #a6a6a6;
+  padding: 5px;
+  margin: 0;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  &:focus {
+    @extend .highlightBoarder;
+  }
+}
+
+.activeItem {
+  background-color: #eaeaea;
+}
+
+.popup {
+  position: absolute;
+  display: flex;
+  max-height: 200px;
+  overflow-y: hidden;
+  text-align: start;
+  background-color: #ffffff;
+  @extend .highlightBoarder;
+}
+
+.popupList {
+  overflow-y: scroll;
+  width: 33.333%;
+}
+
+.popupItem {
+  display: block;
+  padding: 2px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
+  &:active {
+    background-color: #c8c8c8;
+  }
+}
