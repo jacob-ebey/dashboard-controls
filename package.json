@@ -11,8 +11,8 @@
     "build": "rimraf dist/ && webpack --config webpack/webpack.config.babel.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint src",
-    "test": "jest",
-    "precommit": "yarn lint && yarn test",
+    "test": "yarn lint && jest",
+    "precommit": "yarn test",
     "prepublishOnly": "yarn precommit"
   },
   "jest": {
