@@ -4,7 +4,7 @@
   "description": "Controls for creating dashboards in React",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
-  "repository": "",
+  "repository": "https://github.com/jacob-ebey/dashboard-controls.git",
   "author": "Jacob Ebey <jacob.ebey@live.com>",
   "license": "MIT",
   "scripts": {
