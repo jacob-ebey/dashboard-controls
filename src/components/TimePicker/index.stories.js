@@ -24,4 +24,7 @@ class TimePickerWrapper extends React.Component {
 storiesOf('TimePicker', module)
   .add('default', () => (
     <TimePickerWrapper />
+  ))
+  .add('can set time', () => (
+    <TimePicker value="2:34 am" />
   ));

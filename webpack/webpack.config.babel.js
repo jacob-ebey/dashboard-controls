@@ -46,6 +46,8 @@ const webpackConfig = {
     libraryTarget: 'umd',
     library: 'react-ui-component-template'
   },
+  
+  devtool: 'source-map',
 
   module: {
     rules: rules()
