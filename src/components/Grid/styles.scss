@@ -1,0 +1,24 @@
+@import '../colors.scss';
+.grid {
+  &>[data-row] {
+    display: flex;
+    border-bottom: 1px solid $color-gray;
+    padding: 5px 0;
+    &[data-header] {
+      &>[data-col] {
+        font-weight: 800;
+      }
+    }
+    &:not([data-header]) {
+      &:hover {
+        background-color: $color-grayLightest;
+      }
+      &:active {
+        background-color: $color-grayLight;
+      }
+    }
+    &>[data-col] {
+      padding: 5px;
+    }
+  }
+}
