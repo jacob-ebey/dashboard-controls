@@ -1,6 +1,6 @@
 {
   "name": "dashboard-controls",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Controls for creating dashboards in React",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
