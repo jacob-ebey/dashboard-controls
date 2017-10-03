@@ -12,6 +12,10 @@ import 'dashboard-controls/dist/style.css';
 console.log(<TimePicker />);
 ```
 
+## Live demo
+
+You can check out the avaliable controls in a live demo at: https://jacob-ebey.github.io/dashboard-controls
+
 ## Developer Features
 
 - Modern JavaScript features (ES6+)
