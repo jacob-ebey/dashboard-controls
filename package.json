@@ -13,6 +13,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint src",
     "test": "yarn lint && jest",
+    "test:coverage": "jest --coverage",
     "precommit": "npm run test",
     "prepublishOnly": "yarn precommit"
   },
