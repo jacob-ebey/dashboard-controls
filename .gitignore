@@ -11,3 +11,4 @@ dist/
 *.retry
 .env
 *.emotion.css
+*.tgz

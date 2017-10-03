@@ -2,6 +2,8 @@
 .vscode/
 node_modules/
 .yarn/
+coverage/
+docs/
 /storybook/
 *.iml
 *.log
@@ -9,3 +11,4 @@ node_modules/
 *.retry
 .env
 *.emotion.css
+*.tgz
