@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import Grid from './index';
 
@@ -13,6 +14,7 @@ const createProps = () => ({
     { name: 'Name 1', value: 'Value 1' },
     { name: 'Name 2', value: 'Value 2' },
   ],
+  onRowClicked: action('Grid: rowClicked'),
 });
 
 storiesOf('Grid', module)

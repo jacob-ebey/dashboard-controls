@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import timemachine from 'timemachine';
 
@@ -10,7 +10,7 @@ Enzyme.configure({ adapter: new Adapter() });
 global.window = global;
 window.addEventListener = () => { };
 window.requestAnimationFrame = () => {
-  throw new Error('requestAnimationFrame is not supported in Node');
+  // empty func
 };
 
 timemachine.config({
@@ -21,6 +21,8 @@ describe('components/TimePicker - index.js', () => {
   const createProps = () => ({
     value: new Date(),
     onChange: jest.fn(),
+    onFocus: jest.fn(),
+    onBlur: jest.fn(),
   });
 
   test('Renders without error', () => {
@@ -88,6 +90,50 @@ describe('components/TimePicker - index.js', () => {
     wrapper.update();
 
     expect(wrapper.state('isOpen')).toBe(true);
+  });
+
+  test('onFocus called when opened', () => {
+    const props = createProps();
+
+    const wrapper = shallow(<TimePicker {...props} />);
+
+    const inputOnClick = wrapper.find('input').prop('onClick');
+    inputOnClick();
+
+    expect(props.onFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('onBlur called when closed', () => {
+    const props = createProps();
+
+    const wrapper = shallow(<TimePicker {...props} />);
+    wrapper.setState({ isOpen: true });
+    wrapper.update();
+
+    const inputOnClick = wrapper.find('input').prop('onClick');
+    inputOnClick();
+
+    expect(props.onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test('onBlur called when closed by clicking outside', () => {
+    const props = createProps();
+
+    const addEventListenerFn = jest.fn();
+    let handleOutsideClick;
+
+    document.addEventListener = (param1, method) => {
+      addEventListenerFn(param1, method);
+      handleOutsideClick = method;
+    };
+
+    const wrapper = mount(<TimePicker {...props} />);
+    wrapper.setState({ isOpen: true });
+    wrapper.update();
+
+    handleOutsideClick({ target: undefined });
+
+    expect(props.onBlur).toHaveBeenCalledTimes(1);
   });
 
   test('Can select hour', () => {

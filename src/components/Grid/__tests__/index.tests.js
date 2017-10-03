@@ -6,10 +6,6 @@ import Grid from '../index';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-window.getSelection = () => ({
-  toString: () => undefined,
-});
-
 describe('components/Grid - index.js', () => {
   const createProps = () => ({
     columns: [
@@ -43,9 +39,75 @@ describe('components/Grid - index.js', () => {
 
     const onRowClick = dataRow.prop('onClick');
 
+    window.getSelection = () => ({
+      toString: () => undefined,
+    });
+
     onRowClick();
 
     expect(props.onRowClicked).toHaveBeenCalledTimes(1);
     expect(props.onRowClicked).toHaveBeenCalledWith(props.items[0]);
+  });
+
+  test('Can click row without onRowClicked', () => {
+    const props = {
+      ...createProps(),
+      onRowClicked: undefined,
+    };
+
+    const wrapper = shallow(<Grid {...props} />);
+    const dataRow = wrapper
+      .find('[data-row]')
+      .not('[data-header]')
+      .first();
+
+    const onRowClick = dataRow.prop('onClick');
+
+    window.getSelection = () => ({
+      toString: () => undefined,
+    });
+
+    onRowClick();
+  });
+
+  test('Raises onRowClicked', () => {
+    const props = createProps();
+
+    const wrapper = shallow(<Grid {...props} />);
+    const dataRow = wrapper
+      .find('[data-row]')
+      .not('[data-header]')
+      .first();
+
+    const onRowClick = dataRow.prop('onClick');
+
+    window.getSelection = () => ({
+      toString: () => undefined,
+    });
+
+    onRowClick();
+
+    expect(props.onRowClicked).toHaveBeenCalledTimes(1);
+    expect(props.onRowClicked).toHaveBeenCalledWith(props.items[0]);
+  });
+
+  test('Does not raise onRowClicked if selection', () => {
+    const props = createProps();
+
+    const wrapper = shallow(<Grid {...props} />);
+    const dataRow = wrapper
+      .find('[data-row]')
+      .not('[data-header]')
+      .first();
+
+    const onRowClick = dataRow.prop('onClick');
+
+    window.getSelection = () => ({
+      toString: () => 'ROFL',
+    });
+
+    onRowClick();
+
+    expect(props.onRowClicked).toHaveBeenCalledTimes(0);
   });
 });

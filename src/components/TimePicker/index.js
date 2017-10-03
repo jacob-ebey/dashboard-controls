@@ -67,8 +67,8 @@ export default class TimePicker extends React.PureComponent {
   }
 
   render() {
-    const { popupWidth, isOpen, internalError } = this.state;
-    const tempDate = this._value;
+    const { popupWidth, isOpen, internalValue, internalError } = this.state;
+    const tempDate = this._getValue(internalValue);
     const date = typeof tempDate === 'object' ? tempDate : {};
     const formattedDate = typeof tempDate === 'object' ? `${tempDate.hour}:${tempDate.minute} ${tempDate.amPm}` : tempDate;
 
@@ -149,10 +149,9 @@ export default class TimePicker extends React.PureComponent {
     );
   }
 
-  get _value() {
-    const { internalValue } = this.state;
+  _getValue(value) {
 
-    const date = new Date(internalValue);
+    const date = new Date(value);
     if (!isNaN(date.getHours()) && !isNaN(date.getMinutes())) {
       const pureHours = date.getHours();
 
@@ -172,7 +171,7 @@ export default class TimePicker extends React.PureComponent {
       return tempDate;
     }
 
-    return internalValue;
+    return value;
   }
 
   _handleOnInputChange = event => {
@@ -312,7 +311,9 @@ export default class TimePicker extends React.PureComponent {
   }
 
   _handleClickOutside = event => {
-    if (this.mainRef && !this.mainRef.contains(event.target)) {
+    const { isOpen } = this.state;
+
+    if (isOpen && this.mainRef && !this.mainRef.contains(event.target)) {
       this._dismiss();
     }
   }
@@ -321,19 +322,20 @@ export default class TimePicker extends React.PureComponent {
     const { onBlur } = this.props;
 
     if (onBlur) {
-      onBlur(new Event().initEvent('blur', false, false));
+      onBlur();
     }
 
     this.setState({ isOpen: false });
   }
 
   _toggleOpen = () => {
-    const { isOpen, onBlur, onFocus } = this.state;
+    const { onBlur, onFocus } = this.props;
+    const { isOpen } = this.state;
 
     if (isOpen && onBlur) {
-      onBlur(new Event().initEvent('blur', false, false));
+      onBlur();
     } else if (onFocus) {
-      onFocus(new Event().initEvent('focus', false, false));
+      onFocus();
     }
 
     this.setState({ isOpen: !isOpen });

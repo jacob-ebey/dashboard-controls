@@ -4,6 +4,10 @@ Controls for creating dashboards in React
 
 ## Quick start
 
+```
+> npm install -s dashboard-controls 
+```
+
 ```javascript
 import React from 'react';
 import { TimePicker } from 'dashboard-controls';

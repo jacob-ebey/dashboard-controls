@@ -1,7 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import TimePicker from './index';
+
+const onChangeAction = action('TimePicker: onChange');
 
 class TimePickerWrapper extends React.Component {
   state = {
@@ -17,6 +20,7 @@ class TimePickerWrapper extends React.Component {
   _handleOnChange = value => {
     console.log(value);
 
+    onChangeAction(value);
     this.setState({ value });
   }
 }
@@ -26,5 +30,5 @@ storiesOf('TimePicker', module)
     <TimePickerWrapper />
   ))
   .add('can set time', () => (
-    <TimePicker value="2:34 am" />
+    <TimePicker value="2:34 am" onChange={onChangeAction} />
   ));

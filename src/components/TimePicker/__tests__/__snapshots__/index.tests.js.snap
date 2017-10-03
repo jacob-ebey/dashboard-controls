@@ -5,7 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TimePicker
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     value={1993-11-30T09:30:00.000Z}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -108,7 +110,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TimePicker
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     value=""
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -211,7 +215,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TimePicker
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     value={1993-11-30T09:30:00.000Z}
   />,
   Symbol(enzyme.__renderer__): Object {

@@ -18,4 +18,15 @@ describe('components/Button - index.js', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('Renders with error', () => {
+    const props = {
+      ...createProps(),
+      error: 'ROFLing error',
+    };
+
+    const wrapper = shallow(<Loader {...props} />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
