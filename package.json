@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist/ && webpack --config webpack/webpack.config.babel.js",
+    "build:storybook": "build-storybook -c .storybook -o docs",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint src",
     "test": "yarn lint && jest",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.8",
+    "@storybook/storybook-deployer": "",
     "autoprefixer": "^7.1.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
